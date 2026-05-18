@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Stepher Hair</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Modern Off-Canvas Navbar -->
+    <nav class="modern-navbar fixed-top">
+        <div class="container-fluid px-4">
+            <div class="d-flex justify-content-between align-items-center py-3">
+                <!-- Logo -->
+                <div class="navbar-brand">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/logo.svg" alt="Stepher Hair Logo" class="navbar-logo">
+                        <span>
+                            STEPHER <span class="text-gradient">HAIR</span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <ul class="desktop-menu d-none d-lg-flex align-items-center gap-4 mb-0">
+                    <li><a href="index.html" class="nav-link-custom">Home</a></li>
+                    <li><a href="services.html" class="nav-link-custom">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link-custom">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link-custom">About</a></li>
+                    <li><a href="testimonials.html" class="nav-link-custom">Testimonials</a></li>
+                    <li><a href="contact.html" class="nav-link-custom active">Contact</a></li>
+                    <li><a href="booking.html" class="btn-book-now">Book Now</a></li>
+                </ul>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle d-lg-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasMenu">
+                    <span class="menu-icon">
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Off-Canvas Mobile Menu -->
+    <div class="offcanvas offcanvas-end custom-offcanvas" tabindex="-1" id="offcanvasMenu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">
+                <img src="images/logo.svg" alt="Stepher Hair Logo" style="width: 40px; height: 40px; margin-right: 10px; vertical-align: middle;">
+                STEPHER <span class="text-gradient">HAIR</span>
+            </h5>
+            <button type="button" class="btn-close-custom" data-bs-dismiss="offcanvas">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- Mobile Menu Items -->
+            <ul class="mobile-nav-list">
+                <li>
+                    <a href="index.html" class="mobile-nav-link" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="services.html" class="mobile-nav-link" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-cut"></i>
+                        <span>Services</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="portfolio.html" class="mobile-nav-link" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-images"></i>
+                        <span>Portfolio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html" class="mobile-nav-link" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="testimonials.html" class="mobile-nav-link" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-star"></i>
+                        <span>Testimonials</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html" class="mobile-nav-link active" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Mobile CTA Button -->
+            <div class="mobile-cta mt-4">
+                <a href="booking.html" class="btn-mobile-book" data-bs-dismiss="offcanvas">
+                    <i class="fas fa-calendar-check"></i>
+                    Book Appointment
+                </a>
+            </div>
+
+            <!-- Mobile Contact Info -->
+            <div class="mobile-contact-info mt-5">
+                <h6 class="text-gradient mb-3">Contact Us</h6>
+                <div class="contact-item-mobile">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+2349068537778">+234 906 853 7778</a>
+                </div>
+                <div class="contact-item-mobile">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:info@stepherhair.com">info@stepherhair.com</a>
+                </div>
+                <div class="contact-item-mobile">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Molipa Express, Ijebu-Ode</span>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="mobile-social mt-4">
+                <a href="#" class="social-icon-mobile"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-icon-mobile"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon-mobile"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon-mobile"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1 data-aos="fade-up">Get In <span class="gold">Touch</span></h1>
+            <p data-aos="fade-up" data-aos-delay="100">We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-content">
+                <div class="contact-form-wrapper" data-aos="fade-right">
+                    <h2>Send Us a Message</h2>
+                    <p>Have a question or feedback? Fill out the form below and we'll get back to you as soon as possible.</p>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email Address *</label>
+                            <input type="email" placeholder="your.email@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="08012345678">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Subject *</label>
+                            <input type="text" placeholder="What is this regarding?" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Message *</label>
+                            <textarea placeholder="Your message here..." rows="6" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-full">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info-wrapper" data-aos="fade-left">
+                    <h2>Contact Information</h2>
+                    <p>Reach out to us through any of these channels. We're here to help!</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Visit Us</strong>
+                                <p>Molipa Express, Front of i-fix Complex<br>Ijebu-Ode, Ogun State, Nigeria</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Call Us</strong>
+                                <p>+234 906 853 7778<br>+234 803 456 7890</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email Us</strong>
+                                <p>info@stepherhair.com<br>booking@stepherhair.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Opening Hours</strong>
+                                <p>Monday - Saturday: 9:00 AM - 8:00 PM<br>Sunday: 11:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <p>+234 906 853 7778<br>Quick responses guaranteed</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-contact">
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Find Us</span>
+            <h2>Our <span class="gold">Location</span></h2>
+            <p>Molipa Express, Front of i-fix Complex, Ijebu-Ode, Ogun State</p>
+        </div>
+        <div class="map-container" data-aos="zoom-in">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.0!2d3.9167!3d6.8167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNDknMDAuMCJOIDPCsDU1JzAwLjAiRQ!5e0!3m2!1sen!2sng!4v1234567890" width="100%" height="450" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="directions-note" data-aos="fade-up">
+            <p><i class="fas fa-info-circle"></i> <strong>Directions:</strong> We're located on Molipa Express, directly in front of i-fix Complex. Easy parking available. Look for our gold and black signage!</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">FAQ</span>
+            <h2>Frequently Asked <span class="gold">Questions</span></h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item" data-aos="fade-up">
+                <h3><i class="fas fa-question-circle"></i> Do I need an appointment?</h3>
+                <p>Walk-ins are welcome, but we recommend booking an appointment to guarantee your preferred time slot and barber.</p>
+            </div>
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                <h3><i class="fas fa-question-circle"></i> What payment methods do you accept?</h3>
+                <p>We accept cash, bank transfers, and all major mobile payment platforms (POS available).</p>
+            </div>
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                <h3><i class="fas fa-question-circle"></i> How long does a typical service take?</h3>
+                <p>A standard haircut takes 30-45 minutes. Combo services take about 60 minutes. VIP experience is 90 minutes.</p>
+            </div>
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <h3><i class="fas fa-question-circle"></i> Can I request a specific barber?</h3>
+                <p>Absolutely! You can request your preferred barber when booking online or calling ahead.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content" data-aos="zoom-in">
+            <h2>Ready to Visit <span class="gold">Us?</span></h2>
+            <p>Book your appointment now or stop by for a walk-in service</p>
+            <a href="booking.html" class="btn-primary">Book Your Appointment →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>STEPHER <span class="gold">HAIR</span></h3>
+                <p>Premium male grooming and barbering services in Ijebu-Ode, Ogun State.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="booking.html">Book Now</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +234 906 853 7778</li>
+                    <li><i class="fas fa-envelope"></i> info@stepherhair.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Molipa Express, Ijebu-Ode</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Opening Hours</h4>
+                <ul>
+                    <li>Monday - Saturday</li>
+                    <li>9:00 AM - 8:00 PM</li>
+                    <li>Sunday</li>
+                    <li>11:00 AM - 6:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Stepher Hair. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/2349068537778" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

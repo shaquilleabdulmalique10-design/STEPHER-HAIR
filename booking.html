@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | Stepher Hair</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Modern Off-Canvas Navbar -->
+    <nav class="modern-navbar fixed-top">
+        <div class="container-fluid px-4">
+            <div class="d-flex justify-content-between align-items-center py-3">
+                <!-- Logo -->
+                <div class="navbar-brand">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/logo.svg" alt="Stepher Hair Logo" class="navbar-logo">
+                        <span>
+                            STEPHER <span class="text-gradient">HAIR</span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <ul class="desktop-menu d-none d-lg-flex align-items-center gap-4 mb-0">
+                    <li><a href="index.html" class="nav-link-custom">Home</a></li>
+                    <li><a href="services.html" class="nav-link-custom">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link-custom">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link-custom">About</a></li>
+                    <li><a href="testimonials.html" class="nav-link-custom">Testimonials</a></li>
+                    <li><a href="contact.html" class="nav-link-custom">Contact</a></li>
+                    <li><a href="booking.html" class="btn-book-now active">Book Now</a></li>
+                </ul>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle d-lg-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasMenu">
+                    <span class="menu-icon">
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Off-Canvas Mobile Menu -->
+    <div class="offcanvas offcanvas-end custom-offcanvas" tabindex="-1" id="offcanvasMenu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">
+                <img src="images/logo.svg" alt="Stepher Hair Logo" style="width: 40px; height: 40px; margin-right: 10px; vertical-align: middle;">
+                STEPHER <span class="text-gradient">HAIR</span>
+            </h5>
+            <button type="button" class="btn-close-custom" data-bs-dismiss="offcanvas">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- Mobile Menu Items -->
+            <ul class="mobile-nav-list">
+                <li>
+                    <a href="index.html" class="mobile-nav-link" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="services.html" class="mobile-nav-link" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-cut"></i>
+                        <span>Services</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="portfolio.html" class="mobile-nav-link" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-images"></i>
+                        <span>Portfolio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html" class="mobile-nav-link" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="testimonials.html" class="mobile-nav-link" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-star"></i>
+                        <span>Testimonials</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html" class="mobile-nav-link" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Mobile CTA Button -->
+            <div class="mobile-cta mt-4">
+                <a href="booking.html" class="btn-mobile-book active" data-bs-dismiss="offcanvas">
+                    <i class="fas fa-calendar-check"></i>
+                    Book Appointment
+                </a>
+            </div>
+
+            <!-- Mobile Contact Info -->
+            <div class="mobile-contact-info mt-5">
+                <h6 class="text-gradient mb-3">Contact Us</h6>
+                <div class="contact-item-mobile">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+2349068537778">+234 906 853 7778</a>
+                </div>
+                <div class="contact-item-mobile">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:info@stepherhair.com">info@stepherhair.com</a>
+                </div>
+                <div class="contact-item-mobile">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Molipa Express, Ijebu-Ode</span>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="mobile-social mt-4">
+                <a href="#" class="social-icon-mobile"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-icon-mobile"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon-mobile"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon-mobile"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1 data-aos="fade-up">Book Your <span class="gold">Appointment</span></h1>
+            <p data-aos="fade-up" data-aos-delay="100">Schedule your grooming session today</p>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="booking-container">
+            <div class="booking-info" data-aos="fade-right">
+                <span class="section-tag">Book Your Appointment</span>
+                <h2>Ready for Your <span class="gold">Transformation?</span></h2>
+                <p>Schedule your appointment today and experience the Stepher Hair difference. Walk-ins welcome, but booking ensures your preferred time slot.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Call Us</strong>
+                            <p>+234 906 853 7778</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Opening Hours</strong>
+                            <p>Mon-Sat: 9AM - 8PM<br>Sunday: 11AM - 6PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Location</strong>
+                            <p>Molipa Express, Front of i-fix Complex<br>Ijebu-Ode, Ogun State</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-benefits">
+                    <h3>Why Book Online?</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Skip the wait - guaranteed time slot</li>
+                        <li><i class="fas fa-check-circle"></i> Choose your preferred barber</li>
+                        <li><i class="fas fa-check-circle"></i> Get appointment reminders</li>
+                        <li><i class="fas fa-check-circle"></i> Easy rescheduling if needed</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="booking-form" data-aos="fade-left">
+                <form id="bookingForm">
+                    <h3>Fill in Your Details</h3>
+                    
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" placeholder="e.g., 08012345678" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="your.email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Service *</label>
+                        <select required>
+                            <option value="">Choose a service</option>
+                            <option value="classic">Classic Haircut - ₦4,000</option>
+                            <option value="fade">Skin Fade - ₦5,000</option>
+                            <option value="beard">Beard Grooming - ₦3,500</option>
+                            <option value="combo">Haircut & Beard Combo - ₦8,000</option>
+                            <option value="color">Hair Coloring - ₦12,000</option>
+                            <option value="vip">VIP Grooming Experience - ₦15,000</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Barber</label>
+                        <select>
+                            <option value="">No preference</option>
+                            <option value="tunde">Tunde Adeyemi</option>
+                            <option value="segun">Segun Oladipo</option>
+                            <option value="michael">Michael Eze</option>
+                            <option value="james">James Okoro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Preferred Date *</label>
+                            <input type="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Preferred Time *</label>
+                            <input type="time" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Additional Notes</label>
+                        <textarea placeholder="Any special requests or preferences?" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-full">Confirm Booking</button>
+                    
+                    <p class="form-note">* Required fields. We'll confirm your appointment via phone or email.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Services -->
+    <section class="quick-services">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Popular Services</span>
+            <h2>Not Sure What to <span class="gold">Book?</span></h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card" data-aos="flip-left">
+                <i class="fas fa-cut"></i>
+                <h3>Skin Fade</h3>
+                <p>Our most popular service</p>
+                <span class="service-price">₦5,000</span>
+            </div>
+            <div class="service-card" data-aos="flip-left" data-aos-delay="100">
+                <i class="fas fa-beard"></i>
+                <h3>Haircut & Beard</h3>
+                <p>Complete grooming package</p>
+                <span class="service-price">₦8,000</span>
+            </div>
+            <div class="service-card" data-aos="flip-left" data-aos-delay="200">
+                <i class="fas fa-crown"></i>
+                <h3>VIP Grooming</h3>
+                <p>Ultimate luxury experience</p>
+                <span class="service-price">₦15,000</span>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <a href="services.html" class="btn-outline">View All Services →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>STEPHER <span class="gold">HAIR</span></h3>
+                <p>Premium male grooming and barbering services in Ijebu-Ode, Ogun State.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="booking.html">Book Now</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +234 906 853 7778</li>
+                    <li><i class="fas fa-envelope"></i> info@stepherhair.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Molipa Express, Ijebu-Ode</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Opening Hours</h4>
+                <ul>
+                    <li>Monday - Saturday</li>
+                    <li>9:00 AM - 8:00 PM</li>
+                    <li>Sunday</li>
+                    <li>11:00 AM - 6:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Stepher Hair. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/2349068537778" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
