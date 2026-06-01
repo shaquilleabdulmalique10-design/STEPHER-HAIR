@@ -1631,11 +1631,25 @@ html {
 }
 
 /* Form Enhancements */
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
+.booking-form .form-group label,
+.contact-form-wrapper .form-group label {
+  display: flex !important;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
   color: #00d9ff;
   font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.booking-form .form-group label i,
+.contact-form-wrapper .form-group label i {
+  color: #d4af37 !important;
+  min-width: 1.2rem;
+  font-size: 1.15rem !important;
+  text-align: center;
+  flex-shrink: 0;
 }
 
 .form-row {
