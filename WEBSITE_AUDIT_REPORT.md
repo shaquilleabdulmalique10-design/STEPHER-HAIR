@@ -30,7 +30,7 @@
 ## ✅ VERIFIED CORRECT
 
 ### 1. **Phone Numbers** ✅
-- All pages use correct number: **+234 906 853 7778**
+- All pages use correct number: **09068537778**
 - WhatsApp links: **https://wa.me/2349068537778**
 - No old phone numbers found
 - **Instances**: 17+ across all pages
@@ -75,7 +75,7 @@
 
 ### 7. **Contact Information** ✅
 All pages have consistent contact info:
-- Phone: +234 906 853 7778
+- Phone: 09068537778
 - Email: info@stepherhair.com
 - Location: Molipa Express, Ijebu-Ode
 - WhatsApp: Working on all pages
@@ -212,7 +212,7 @@ Before going live:
 
 ## 📞 CONTACT INFORMATION (VERIFIED)
 
-**Phone**: +234 906 853 7778
+**Phone**: 09068537778
 **Email**: info@stepherhair.com
 **Location**: Molipa Express, Front of i-fix Complex, Ijebu-Ode, Ogun State
 **WhatsApp**: https://wa.me/2349068537778

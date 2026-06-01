@@ -78,7 +78,7 @@ Edit `css/style.css`:
 
 ### Update Contact Info
 Edit `index.html` - Search for:
-- `+234 906 853 7778` (phone)
+- `09068537778` (phone)
 - `info@stepherhair.com` (email)
 - `Victoria Island, Lagos` (address)
 

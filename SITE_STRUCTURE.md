@@ -73,9 +73,9 @@ Ijebu-Ode, Ogun State, Nigeria
 - Longitude: 3.9167°E
 
 **Contact:**
-- Phone: +234 906 853 7778
+- Phone: 09068537778
 - Email: info@stepherhair.com
-- WhatsApp: +234 906 853 7778
+- WhatsApp: 09068537778
 
 **Hours:**
 - Monday - Saturday: 9:00 AM - 8:00 PM

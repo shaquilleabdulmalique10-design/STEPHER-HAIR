@@ -1,17 +1,13 @@
-// Preloader - Only on index.html (home page)
-window.addEventListener("load", function () {
-  const preloader = document.querySelector('.preloader');
-  
-  if (preloader) {
-    // Show preloader for 5 seconds on home page
-    setTimeout(function() {
-      preloader.classList.add('fade-out');
-      setTimeout(function() {
-        preloader.style.display = 'none';
-      }, 500);
-    }, 5000);
-  }
-});
+// Preloader - exactly 5 seconds on home page
+const preloader = document.querySelector(".preloader");
+if (preloader) {
+  setTimeout(function () {
+    preloader.classList.add("fade-out");
+    setTimeout(function () {
+      preloader.style.display = "none";
+    }, 500);
+  }, 5000);
+}
 
 // Initialize AOS
 AOS.init({
@@ -40,14 +36,14 @@ if (hamburger && navMenu) {
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
   });
-  
+
   // Close mobile menu when clicking a link
   document.querySelectorAll(".nav-menu a").forEach((link) => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("active");
     });
   });
-  
+
   // Close mobile menu when clicking outside
   document.addEventListener("click", (e) => {
     if (
@@ -166,6 +162,27 @@ function openLightbox(element) {
   });
 }
 
+// Attach delegated handler for portfolio view links (no inline onclicks)
+document.addEventListener("click", function (e) {
+  const target = e.target.closest(".view-details");
+  if (target) {
+    e.preventDefault();
+    // find the image inside the closest portfolio card
+    const card = target.closest(".portfolio-card");
+    if (card) {
+      const img = card.querySelector("img");
+      if (img) openLightbox(img);
+    }
+  }
+});
+
+// Simple sanitizer to avoid storing raw HTML
+function sanitize(input) {
+  const d = document.createElement("div");
+  d.textContent = input;
+  return d.innerHTML;
+}
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
@@ -183,27 +200,27 @@ window.addEventListener("load", () => {
 });
 
 // Custom Toast Notification System
-function showToast(message, type = 'success') {
+function showToast(message, type = "success") {
   // Remove any existing toasts
-  const existingToast = document.querySelector('.custom-toast');
+  const existingToast = document.querySelector(".custom-toast");
   if (existingToast) {
     existingToast.remove();
   }
 
   // Create toast element
-  const toast = document.createElement('div');
+  const toast = document.createElement("div");
   toast.className = `custom-toast ${type}`;
-  
+
   // Icon based on type
-  let icon = '';
-  if (type === 'success') {
+  let icon = "";
+  if (type === "success") {
     icon = '<i class="fas fa-check-circle"></i>';
-  } else if (type === 'error') {
+  } else if (type === "error") {
     icon = '<i class="fas fa-exclamation-circle"></i>';
-  } else if (type === 'info') {
+  } else if (type === "info") {
     icon = '<i class="fas fa-info-circle"></i>';
   }
-  
+
   toast.innerHTML = `
     ${icon}
     <span>${message}</span>
@@ -211,17 +228,17 @@ function showToast(message, type = 'success') {
       <i class="fas fa-times"></i>
     </button>
   `;
-  
+
   document.body.appendChild(toast);
-  
+
   // Trigger animation
   setTimeout(() => {
-    toast.classList.add('show');
+    toast.classList.add("show");
   }, 10);
-  
+
   // Auto remove after 5 seconds
   setTimeout(() => {
-    toast.classList.remove('show');
+    toast.classList.remove("show");
     setTimeout(() => {
       toast.remove();
     }, 300);
@@ -231,19 +248,93 @@ function showToast(message, type = 'success') {
 // Form submissions
 const bookingForm = document.getElementById("bookingForm");
 if (bookingForm) {
-  bookingForm.addEventListener("submit", (e) => {
+  bookingForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    showToast("Thank you for your booking! We will contact you shortly to confirm your appointment.", "success");
-    bookingForm.reset();
+    const fields = bookingForm.querySelectorAll("input, select, textarea");
+    const data = {};
+    fields.forEach((f) => {
+      if (f.name) {
+        data[f.name] = sanitize(f.value || "");
+      }
+    });
+
+    const url = bookingForm.getAttribute("action") || "/api/bookings";
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Server rejected booking");
+      }
+
+      const result = await response.json();
+      showToast(result.message || "Booking submitted successfully.", "success");
+      bookingForm.reset();
+    } catch (err) {
+      const existing = JSON.parse(
+        localStorage.getItem("stepher_bookings") || "[]",
+      );
+      existing.push(
+        Object.assign({ createdAt: new Date().toISOString() }, data),
+      );
+      localStorage.setItem("stepher_bookings", JSON.stringify(existing));
+      showToast(
+        "Booking stored locally. Server unavailable, try again later.",
+        "info",
+      );
+      bookingForm.reset();
+    }
   });
 }
 
 const contactForm = document.getElementById("contactForm");
 if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
+  contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    showToast("Thank you for your message! We will get back to you soon.", "success");
-    contactForm.reset();
+    const fields = contactForm.querySelectorAll("input, textarea");
+    const data = {};
+    fields.forEach((f) => {
+      if (f.name) {
+        data[f.name] = sanitize(f.value || "");
+      }
+    });
+
+    const url = contactForm.getAttribute("action") || "/api/messages";
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Server rejected message");
+      }
+
+      const result = await response.json();
+      showToast(result.message || "Message sent successfully.", "success");
+      contactForm.reset();
+    } catch (err) {
+      const existing = JSON.parse(
+        localStorage.getItem("stepher_messages") || "[]",
+      );
+      existing.push(
+        Object.assign({ createdAt: new Date().toISOString() }, data),
+      );
+      localStorage.setItem("stepher_messages", JSON.stringify(existing));
+      showToast(
+        "Message stored locally. Server unavailable, try again later.",
+        "info",
+      );
+      contactForm.reset();
+    }
   });
 }
 
@@ -253,4 +344,3 @@ if (contactForm) {
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
-
